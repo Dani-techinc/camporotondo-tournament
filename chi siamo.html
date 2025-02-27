@@ -1,36 +1,60 @@
 <!DOCTYPE html>
-
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo - Camporotondo Tournament</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
     <header>
-        <h1 style="color: white;">Camporotondo Tournament</h1>
+        <h1>Camporotondo Tournament</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="chi siamo.html">Chi siamo</a></li>
+                <li><a href="chi_siamo.html">Chi siamo</a></li>
                 <li><a href="Orari.html">Orari</a></li>
                 <li><a href="Contatti.html">Contatti</a></li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <h2>Chi Siamo</h2>
+        <p>Scopri chi siamo e il nostro impegno per il torneo!</p>
+
+        <div class="team-container">
+            <div class="team-member">
+                <img src="immagine1.jpg" alt="Nome Persona 1">
+                <h3>Daniele Marchese</h3>
+                <p>Creatore del torneo</p>
+            </div>
+
+            <div class="team-member">
+                <img src="immagine2.jpg" alt="Nome Persona 2">
+                <h3>Lino Viglianesi</h3>
+                <p>Co-Creatore del torneo</p>
+            </div>
+        </div>
+    </main>
+
     <footer>
-        <p>&copy; Camporotondo Tournament. Tutti i diritti sono riservati.</p>
+        <p style="color: #fff;">&copy; Camporotondo Tournament. Tutti i diritti sono riservati.</p>
     </footer>
 </body>
-
-<html>
-    <head>
-        <title>Camporotondo Tournament</title>
-    </head>
 </html>
 
 <style>
-    body {
-    font-family:Arial, Helvetica, sans-serif;
-    margin: 0px;
+/* Stili generali */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
     padding: 0;
-    background-color:aliceblue;
+    background-color: aliceblue;
+    text-align: center;
 }
 
+/* HEADER */
 header {
     background-color: #008080 ;
     color: white;
@@ -45,7 +69,6 @@ nav ul {
     padding: 0px;
 }
 
-
 nav ul li {
     display: inline;
     margin: 15px;
@@ -56,10 +79,44 @@ nav ul li a {
     text-decoration: none;
 }
 
-h1, h2 {
+/* Contenitore team */
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    flex-wrap: wrap; /* Adatta le immagini ai dispositivi più piccoli */
+}
+
+.team-member {
+    text-align: center;
+    width: 250px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #008080;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+}
+
+h3 {
+    margin: 10px 0 5px;
     color: #333;
 }
 
+p {
+    color: #000;
+}
+
+/* FOOTER (fisso in basso) */
 footer {
     background-color: #008080;
     color: white;
@@ -68,6 +125,33 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin-left: 0px;
+}
+
+/* RESPONSIVITÀ */
+@media (max-width: 768px) { /* Tablet */
+    .team-container {
+        flex-direction: column; /* Dispone le immagini in colonna */
+    }
+    nav ul {
+        text-align: center;
+        padding: 10px 0;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) { /* Smartphone */
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    p {
+        font-size: 14px;
+    }
 }
 </style>
